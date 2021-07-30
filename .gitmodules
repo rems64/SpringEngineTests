@@ -1,0 +1,3 @@
+[submodule "SpringEngine/lib/spdlog"]
+	path = SpringEngine/lib/spdlog
+	url = https://github.com/gabime/spdlog.git
