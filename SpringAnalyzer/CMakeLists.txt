@@ -1,23 +1,25 @@
-ï»¿# CMakeList.txtÂ : projet CMake pour SpringEngine, incluez la source et dÃ©finissez
-# la logique spÃ©cifique au projet ici.
+# CMakeList.txt : projet CMake pour SpringEngine, incluez la source et définissez
+# la logique spécifique au projet ici.
 #
 cmake_minimum_required (VERSION 3.8)
-project(SpringEngine)
+
+project(SpringAnalyzer)
 
 option(BUILD_DOC "Build documentation" ON)
 
-include_directories("include/")
+include_directories("include/" "../SpringEngine/include/")
 
 set(SRCS
-	
- "src/Core/Application.cpp")
+    "src/Core/SpringAnalyzerApp.cpp"
+)
 
-# Ajoutez une source Ã  l'exÃ©cutable de ce projet.
-add_library (SpringEngine STATIC ${SRCS})
+# Ajoutez une source à l'exécutable de ce projet.
+add_executable (SpringAnalyzer ${SRCS})
+target_link_libraries(SpringAnalyzer PUBLIC SpringEngine)
 
 target_precompile_headers(SpringEngine
   PUBLIC
-    "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/include/SpringEngine/Core/pch.hpp>"
+    "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/include/SpringAnalyzer/Core/pch.hpp>"
 )
 
 #find_package(Doxygen)
