@@ -1,12 +1,11 @@
 #include <SpringAnalyzer/Core/SpringAnalyzerApp.hpp>
 
-#include <SpringEngine/Core/EntryPoint.hpp>
+#include <Spring/SpringMain/Core/EntryPoint.hpp>
 
 namespace SA
 {
 	SpringAnalyzerApp::SpringAnalyzerApp()
 	{
-		std::cout << "[INFO] ALIVE" << std::endl;
 	}
 
 	SpringAnalyzerApp::~SpringAnalyzerApp()

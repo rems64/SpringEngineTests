@@ -7,7 +7,7 @@ project(SpringAnalyzer)
 
 option(BUILD_DOC "Build documentation" ON)
 
-include_directories("include/" "../SpringEngine/include/")
+include_directories("include/" "../SpringCore/include/" "../SpringMain/include/" "../Modules/BaseModule/include/")
 
 set(SRCS
     "src/Core/SpringAnalyzerApp.cpp"
@@ -15,12 +15,12 @@ set(SRCS
 
 # Ajoutez une source à l'exécutable de ce projet.
 add_executable (SpringAnalyzer ${SRCS})
-target_link_libraries(SpringAnalyzer PUBLIC SpringEngine)
+target_link_libraries(SpringAnalyzer PUBLIC SpringCore SpringMain)
 
-target_precompile_headers(SpringEngine
-  PUBLIC
-    "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/include/SpringAnalyzer/Core/pch.hpp>"
-)
+#target_precompile_headers(SpringAnalyzer
+#  PUBLIC
+#    "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/include/SpringAnalyzer/Core/pch.hpp>"
+#)
 
 #find_package(Doxygen)
 #if(DOXYGEN_FOUND)

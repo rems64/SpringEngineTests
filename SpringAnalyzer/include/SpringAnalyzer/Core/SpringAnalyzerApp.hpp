@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SpringEngine/SpringEngine.hpp>
+#include <Spring/SpringCore.hpp>
 
 namespace SA
 {
